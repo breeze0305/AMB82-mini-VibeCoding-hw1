@@ -2,7 +2,7 @@
 
 在電腦桌面程式輸入開發板 IP，連線成功後，說「左邊開燈」開啟藍燈，說「右邊開燈」開啟綠燈。
 
-**原開發電腦已安裝完成，程式曾透過 Arduino CLI 成功燒入 COM3，並與 `192.168.49.201` 實機通訊成功。** 原電腦可直接雙擊 `desktop/start.cmd`；其他電腦 clone 後先依 [首次設定](docs/setup.md) 安裝環境與建立本機 Wi-Fi 設定。IP 與 COM 埠以當下環境為準。真人語音與 LED 的現場驗收仍待進行；檢查紀錄見 `docs/verification.md`。
+**原開發電腦已安裝完成，2026-09-19 曾透過 Arduino CLI 成功燒入 COM3，並與 `192.168.49.201` 實機通訊成功。** 原電腦可直接雙擊 `desktop/start.cmd`；其他電腦 clone 後先依 [首次設定](docs/setup.md) 安裝環境與建立本機 Wi-Fi 設定。IP 與 COM 埠以當下環境為準。歷史檢查範圍見 [開發檢查紀錄](docs/verification.md)。
 
 **介面、麥克風錄音與中文語音辨識都在電腦上。** 目前使用 **Whisper small 多語模型**，以 CPU int8 在本機辨識中文；開發板連接現有 Wi-Fi，只負責接收指令、控制 LED、回傳結果。
 
@@ -25,6 +25,8 @@
 | `tools/upload.ps1` | 透過 arduino-cli 編譯及燒錄 |
 | `tools/read_ip.ps1` | 從 COM3 讀取開發板回報的 IP |
 | `docs/test-record.csv` | 12 次現場測試的空白結果表 |
+| `reports/HW1_繳交成果報告.pdf` | 本機正式成果報告，另行繳交，不納入 GitHub |
+| `reports/HW1_繳交成果報告.md` | 報告的本機可編輯來源，不納入 GitHub |
 
 ## 1. 讓開發板連上 Wi-Fi
 
@@ -105,7 +107,7 @@ Whisper 會辨識整句話，再交由上述規則判斷，不會強制把所有
 
 ## 5. 現場測試並記錄
 
-目前 `docs/test-record.csv` 的實測結果留白，請操作後照實填入。
+目前 `docs/test-record.csv` 的實測結果留白，請操作後照實填入。示範影片連結已提供，影片內容尚未逐項核對，因此不直接據此填入驗收結果。
 
 1. 每次開燈測試前按「全部關燈」，確認兩顆燈熄滅。
 2. 用麥克風說「左邊開燈」**5 次**，再說「右邊開燈」**5 次**。每次記錄辨識文字、介面提示、兩顆 LED 實際反應及成功／失敗。
@@ -135,8 +137,10 @@ Whisper 會辨識整句話，再交由上述規則判斷，不會強制把所有
 
 參考：[AMB82-MINI 官方 SDK](https://github.com/Ameba-AIoT/ameba-arduino-pro2)、[官方 LED 控制範例](https://ameba-doc-arduino-sdk.readthedocs-hosted.com/en/latest/ameba_pro2/amb82-mini/Example_Guides/WiFi/Simple%20Http%20Server%20to%20Control%20LED.html)、[faster-whisper](https://github.com/SYSTRAN/faster-whisper)、[使用的模型](https://huggingface.co/Systran/faster-whisper-small)。
 
-## 報告、Demo 與開發紀錄
+## 繳交項目
 
-匯出資料放在 [`reports/`](reports/)：Git 收錄可編輯的報告簡報、簡報 PDF，以及逐頁講稿與 3 分鐘 demo 步驟。對話與操作紀錄 PDF、`reports/records/operations.txt` 和 JSONL 僅保留在原電腦，不納入 Git；這些匯出中的 Wi-Fi 密碼已遮蔽。
+1. **成果 PDF 另行繳交**：系統架構圖、操作說明、AI 協作紀錄與學習心得初稿，心得待本人補充。
+2. [YouTube 示範影片](https://youtu.be/VF18OTqM3s0)。
+3. [GitHub 程式碼](https://github.com/breeze0305/AMB82-mini-VibeCoding-hw1)。
 
-Token 用量採實際紀錄統計，分開列出實作階段及製作報告時的快照；快取 token 已包含在 input 內，不可重複相加。詳細範圍與數字見紀錄 PDF 及 `reports/records/token_usage.json`。
+正式報告為本機的 `reports/HW1_繳交成果報告.pdf`，可由同名 `.md` 修改，兩者均不納入 GitHub。完整對話與操作紀錄也僅保留在原開發電腦；成果報告提供 AI 協作過程摘要。

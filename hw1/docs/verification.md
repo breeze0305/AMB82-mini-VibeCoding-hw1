@@ -1,6 +1,8 @@
-# 開發檢查紀錄
+# 開發檢查紀錄（2026-09-19）
 
-日期：2026-09-19。這份是開發檢查，真人語音與實際 LED 驗收另填 `test-record.csv`。
+以下保留 2026-09-19 的歷史開發檢查結果。真人語音與實際 LED 的 12 次驗收另填 [`test-record.csv`](test-record.csv)，目前結果欄仍留白。
+
+後續已提供 [YouTube 示範影片](https://youtu.be/VF18OTqM3s0) 與 [GitHub 程式碼](https://github.com/breeze0305/AMB82-mini-VibeCoding-hw1)，成果 PDF 另行繳交，本機檔名為 `hw1/reports/HW1_繳交成果報告.pdf`。影片內容尚未逐項核對，不據此改寫下列歷史結果或宣稱 12 次驗收完成。
 
 本文引用的 `hw1/logs/` 與完整對話／操作紀錄保留在原開發電腦，未納入 Git；clone 後不會包含這些歷史日誌。可重新執行測試與燒錄工具產生自己的紀錄。
 
@@ -15,7 +17,7 @@
 | 合成音訊辨識 | 更換 Whisper 後，Hanhan、Yating、Zhiwei 的左右開燈共 6 個樣本皆正確辨識；Hanhan 的否定語句及非控制語句也正確保留，共 8 個樣本符合預期 |
 | 模型更換比較 | Vosk 將 Hanhan 的兩個開燈樣本誤認為「台燈」；Whisper small 在相同音訊正確辨識為「左边开灯」「右边开灯」，未靠模糊規則補救 |
 | 實機 Wi-Fi／TCP 控制 | `192.168.49.201:8266` 的 HELLO、全部關燈、藍燈開、綠燈開、再全部關燈皆收到正確 ACK；尚未 HELLO 的控制與未知指令皆被拒絕且板端狀態不變；紀錄在 `hw1/logs/hardware-check.json` |
-| 真人語音與實際燈光 | 尚待現場麥克風與肉眼驗收；上述 ACK 驗證不等於光學量測 |
+| 真人語音與實際燈光 | 當時尚待現場麥克風與肉眼驗收；上述 ACK 驗證不等於光學量測 |
 
 工具版本：Arduino CLI 1.5.1、AmebaPro2 4.0.9-build20250805。FQBN：`realtek:AmebaPro2:Ameba_AMB82-MINI`。燒錄使用手動 Download Mode、2 Mbaud，沒有要求全片清除。
 

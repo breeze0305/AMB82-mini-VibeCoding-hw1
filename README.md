@@ -4,6 +4,14 @@
 
 語音與 UI 全部在電腦執行：Python Tkinter、Whisper small 本機辨識、Silero VAD 句尾判斷及有限近音校正。開發板透過 TCP 8266 接收 JSON 指令，完成操作後回傳 ACK。
 
+## 繳交項目
+
+1. **成果 PDF 另行繳交**：包含系統架構圖、操作說明、AI 協作紀錄與學習心得初稿，心得待本人補充。
+2. [YouTube 示範影片](https://youtu.be/VF18OTqM3s0)。
+3. [GitHub 程式碼](https://github.com/breeze0305/AMB82-mini-VibeCoding-hw1)。
+
+正式報告與可編輯來源僅保留於本機：`hw1/reports/HW1_繳交成果報告.pdf`、同名 `.md`，不納入 GitHub。
+
 ## 專案結構
 
 | 路徑 | 內容 |
@@ -12,7 +20,7 @@
 | [`hw1/firmware/`](hw1/firmware/) | Arduino 韌體、Wi-Fi 設定範本及解析器測試 |
 | [`hw1/tools/`](hw1/tools/) | 編譯燒錄與序列埠 IP 讀取工具 |
 | [`hw1/docs/`](hw1/docs/) | 開發驗證摘要與現場測試表 |
-| [`hw1/reports/`](hw1/reports/) | 14 頁報告簡報、PDF、講稿與介面截圖 |
+| [`hw1/reports/`](hw1/reports/) | 繳交資料說明與介面截圖；正式報告僅保留在本機 |
 
 ## 第一次使用
 
@@ -45,13 +53,12 @@
 .\hw1\desktop\.venv\Scripts\python.exe -m unittest discover -s hw1/desktop/tests -v
 ```
 
-開發紀錄包含 42 項桌面測試、93 項韌體解析檢查與 8 段合成音訊。合成音訊結果不代表真人辨識率；板端 ACK 不等於肉眼確認 LED。驗證範圍見 [`verification.md`](hw1/docs/verification.md)，現場結果填入 [`test-record.csv`](hw1/docs/test-record.csv)。
+2026-09-19 的開發紀錄包含 42 項桌面測試、93 項韌體解析檢查與 8 段合成音訊。合成音訊結果不代表真人辨識率；板端 ACK 不等於肉眼確認 LED。驗證範圍見 [`verification.md`](hw1/docs/verification.md)。
 
-- [報告簡報 PPTX](hw1/reports/HW1_語音控制系統簡報.pptx) / [PDF](hw1/reports/HW1_語音控制系統簡報.pdf)
-- [逐頁講稿與 3 分鐘 demo 步驟](hw1/reports/HW1_報告與Demo講稿.md)
+示範影片連結已提供；影片內容未經本文件逐項驗證，12 次現場結果仍應照實填入 [`test-record.csv`](hw1/docs/test-record.csv)。
 
 ## Git 收錄範圍
 
-Git 收錄程式、測試、設定範本、文件與正式簡報。Wi-Fi 密碼檔、模型、虛擬環境、韌體 binary、建置暫存、原始日誌，以及完整對話／操作紀錄與 ZIP 保留在原電腦並排除。韌體 binary 可能含編入的 Wi-Fi 資料，不應強制加入 Git。
+Git 收錄程式、測試、設定範本與操作文件。正式成果 PDF 及其 Markdown 來源、Wi-Fi 密碼檔、模型、虛擬環境、韌體 binary、建置暫存、原始日誌，以及完整對話／操作紀錄與 ZIP 保留在原電腦並排除。韌體 binary 可能含編入的 Wi-Fi 資料，不應強制加入 Git。
 
 其他電腦 clone 後需依上述步驟建立環境與設定，不會取得本機密碼或語音模型。本機歷史測試中的 IP／COM 埠不是所有環境的固定值。
