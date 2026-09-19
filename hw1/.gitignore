@@ -1,0 +1,20 @@
+desktop/.venv/
+desktop/models/
+desktop/__pycache__/
+desktop/tests/__pycache__/
+desktop/logs/
+firmware/amb82_voice_led/wifi_config.h
+.build/
+build/
+logs/
+*.pyc
+
+# Generated report builders, previews and temporary audio / artifacts
+.presentation-build/
+tmp/
+
+# Private conversation / operation exports remain on this computer
+reports/records/
+reports/HW1_對話與操作紀錄.pdf
+reports/package_manifest.json
+HW1_報告與完整紀錄.zip

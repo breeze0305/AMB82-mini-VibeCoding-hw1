@@ -1,0 +1,5 @@
+faster-whisper==1.2.1
+ctranslate2==4.8.2
+numpy>=1.26,<3
+sounddevice==0.5.5
+pypinyin==0.55.0
