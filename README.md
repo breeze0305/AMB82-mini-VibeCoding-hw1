@@ -6,7 +6,7 @@
 
 ## 繳交項目
 
-1. **成果 PDF 另行繳交**：包含系統架構圖、操作說明、AI 協作紀錄與學習心得初稿，心得待本人補充。
+1. **成果 PDF 另行繳交**：包含系統架構圖、操作說明、AI 協作簡述、截至軟體完成的可見對話附錄與本人學習心得。
 2. [YouTube 示範影片](https://youtu.be/VF18OTqM3s0)。
 3. [GitHub 程式碼](https://github.com/breeze0305/AMB82-mini-VibeCoding-hw1)。
 
